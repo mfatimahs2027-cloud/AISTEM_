@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animals by Mahnoor</title>
+
+<style>
+/* ------------------------------------------------ */
+/* IMPORT FONTS */
+/* ------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ------------------------------------------------ */
+/* GLOBAL RESET */
+/* ------------------------------------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    color: #eee;
+    background: #000;
+    transition: background 1s ease, color 1s ease;
+    cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur116.cur'), auto;
+}
+
+/* Light mode */
+.light-mode {
+    background: #ffffff;
+    color: #111;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section {
+    padding: 60px 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Lavender glowing divider */
+.section::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 2px;
+    margin: 40px auto 0;
+    background: #c7a0e8;
+    box-shadow: 0 0 12px #c7a0e8;
+}
+
+/* ------------------------------------------------ */
+/* HEADER */
+/* ------------------------------------------------ */
+.site-header {
+    background: #111;
+    padding: 15px 0;
+    border-bottom: 2px solid #c7a0e8;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #c7a0e8;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: #eee;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.main-nav a:hover {
+    color: #c7a0e8;
+    text-shadow: 0 0 8px #c7a0e8;
+}
+
+/* Toggle button */
+.mode-toggle {
+    background: #c7a0e8;
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.mode-toggle:hover {
+    background: #000;
+    color: #c7a0e8;
+    box-shadow: 0 0 12px #c7a0e8;
+}
+
+/* ------------------------------------------------ */
+/* HERO SLIDER */
+/* ------------------------------------------------ */
+.hero-slider {
+    display: flex;
+    overflow: hidden;
+    height: 300px;
+}
+
+.slide {
+    flex: 1;
+    min-width: 100%;
+    background: #333;
+    color: #c7a0e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+/* ------------------------------------------------ */
+/* FLOAT ANIMATION */
+/* ------------------------------------------------ */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+/* ------------------------------------------------ */
+/* SLIDE CONTENT SECTIONS */
+/* ------------------------------------------------ */
+.slide-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.slide-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #c7a0e8;
+}
+
+.slide-section p {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 1.1rem;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+    <div class="header-inner">
+        <div class="logo">Animals by Mahnoor</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#bigcats">Big Cats</a></li>
+                <li><a href="#goat">The Goat</a></li>
+                <li><a href="#sharks">Sharks</a></li>
+            </ul>
+        </nav>
+
+        <button id="modeToggle" class="mode-toggle">Toggle Mode</button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section id="hero" class="section">
+    <div class="hero-slider">
+        <a href="#bigcats" class="slide">Big Cats</a>
+        <a href="#goat" class="slide">The Goat</a>
+        <a href="#sharks" class="slide">Sharks</a>
+    </div>
+</section>
+
+<!-- SLIDE 1: BIG CATS -->
+<section id="bigcats" class="slide-section">
+    <h2>Big Cats</h2>
+    <p>
+        Big cats are powerful predators known for their strength, speed, and beauty. 
+        They include lions, tigers, leopards, and jaguars. These animals are apex predators 
+        and play an important role in keeping ecosystems balanced.
+    </p>
+</section>
+
+<!-- SLIDE 2: THE GOAT -->
+<section id="goat" class="slide-section">
+    <h2>The Goat</h2>
+    <p>
+        Goats are intelligent, curious, and playful animals. They are known for their climbing 
+        abilities and their unique rectangular pupils. Goats have been domesticated for thousands 
+        of years and provide milk, meat, and companionship.
+    </p>
+</section>
+
+<!-- SLIDE 3: SHARKS -->
+<section id="sharks" class="slide-section">
+    <h2>Sharks</h2>
+    <p>
+        Sharks are ancient ocean predators that have existed for over 400 million years. 
+        They come in many sizes, from tiny dwarf sharks to massive whale sharks. Despite 
+        their scary reputation, most sharks are harmless to humans and are essential for 
+        healthy marine ecosystems.
+    </p>
+</section>
+
+<!-- DARK/LIGHT MODE SCRIPT -->
+<script>
+const toggleBtn = document.getElementById("modeToggle");
+toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+});
+</script>
+
+</body>
+</html>
