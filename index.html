@@ -1,240 +1,424 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Animals by Mahnoor</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Animals from Land, Mountains and the Sea</title>
+  <link rel="stylesheet" href="style.css">
 
-<style>
-/* ------------------------------------------------ */
-/* IMPORT FONTS */
-/* ------------------------------------------------ */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+  <!-- PAGE-SPECIFIC ADJUSTMENTS -->
+  <style>
+    .slide-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
 
-/* ------------------------------------------------ */
-/* GLOBAL RESET */
-/* ------------------------------------------------ */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    .slide-title {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 18px;
+      background: rgba(0,0,0,0.5);
+      padding: 5px 10px;
+      color: white;
+      border-radius: 4px;
+    }
 
-html {
-    scroll-behavior: smooth;
-}
+    .slide {
+      position: relative;
+    }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.7;
-    color: #eee;
-    background: #000;
-    transition: background 1s ease, color 1s ease;
-    cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur116.cur'), auto;
-}
-
-/* Light mode */
-.light-mode {
-    background: #ffffff;
-    color: #111;
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.section {
-    padding: 60px 0;
-    animation: fadeIn 1s ease forwards;
-}
-
-/* Lavender glowing divider */
-.section::after {
-    content: "";
-    display: block;
-    width: 80%;
-    height: 2px;
-    margin: 40px auto 0;
-    background: #c7a0e8;
-    box-shadow: 0 0 12px #c7a0e8;
-}
-
-/* ------------------------------------------------ */
-/* HEADER */
-/* ------------------------------------------------ */
-.site-header {
-    background: #111;
-    padding: 15px 0;
-    border-bottom: 2px solid #c7a0e8;
-}
-
-.header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    color: #c7a0e8;
-}
-
-.main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.main-nav a {
-    color: #eee;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.main-nav a:hover {
-    color: #c7a0e8;
-    text-shadow: 0 0 8px #c7a0e8;
-}
-
-/* Toggle button */
-.mode-toggle {
-    background: #c7a0e8;
-    color: #000;
-    padding: 8px 16px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.mode-toggle:hover {
-    background: #000;
-    color: #c7a0e8;
-    box-shadow: 0 0 12px #c7a0e8;
-}
-
-/* ------------------------------------------------ */
-/* HERO SLIDER */
-/* ------------------------------------------------ */
-.hero-slider {
-    display: flex;
-    overflow: hidden;
-    height: 300px;
-}
-
-.slide {
-    flex: 1;
-    min-width: 100%;
-    background: #333;
-    color: #c7a0e8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    text-decoration: none;
-}
-
-/* ------------------------------------------------ */
-/* FLOAT ANIMATION */
-/* ------------------------------------------------ */
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-    100% { transform: translateY(0); }
-}
-
-/* ------------------------------------------------ */
-/* SLIDE CONTENT SECTIONS */
-/* ------------------------------------------------ */
-.slide-section {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.slide-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: #c7a0e8;
-}
-
-.slide-section p {
-    max-width: 800px;
-    margin: 20px auto;
-    font-size: 1.1rem;
-}
-
-</style>
+    .main-nav ul {
+      display: flex;
+      justify-content: flex-start;
+      gap: 20px;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header class="site-header">
-    <div class="header-inner">
-        <div class="logo">Animals by Mahnoor</div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#bigcats">Big Cats</a></li>
-                <li><a href="#goat">The Goat</a></li>
-                <li><a href="#sharks">Sharks</a></li>
-            </ul>
-        </nav>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
 
-        <button id="modeToggle" class="mode-toggle">Toggle Mode</button>
+      <div class="logo">
+        <a href="index.html">Animals from Land, Mountains and the Sea</a>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="hamburger">☰</div>
+
+      <!-- THEME TOGGLE BUTTON -->
+      <button class="theme-toggle">🌑</button>
+
     </div>
-</header>
+  </header>
 
-<!-- HERO -->
-<section id="hero" class="section">
-    <div class="hero-slider">
-        <a href="#bigcats" class="slide">Big Cats</a>
-        <a href="#goat" class="slide">The Goat</a>
-        <a href="#sharks" class="slide">Sharks</a>
+  <!-- MOBILE NAV -->
+  <nav class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+
+    <!-- HERO SLIDER -->
+    <section class="hero-slider section fade-in scroll-animate">
+      <div class="container slide-container">
+
+        <!-- SLIDE 1 -->
+        <div class="slide"
+          data-title="Big Cats"
+          data-image="https://i.pinimg.com/1200x/11/0c/2f/110c2f9786ede37dc2e3241f49c88909.jpg"
+          data-content="
+          <h3>Big Cats</h3>
+          <p>These are the ones that can roar and are the biggest/most famous wild cats:</p>
+          <h4>Core Big Cats (the classic 5)</h4>
+          <ul>
+            <li>Lion</li>
+            <li>Tiger</li>
+            <li>Leopard</li>
+            <li>Jaguar</li>
+            <li>Snow Leopard</li>
+          </ul>
+          <p>Some groups expand it to include:</p>
+          <ul>
+            <li>Cheetah — super fast runner</li>
+            <li>Cougar — sneaky and adaptable</li>
+            <li>Clouded Leopard & Sunda Clouded Leopard — great climbers</li>
+          </ul>
+          <p>The strict count is 5 big cat species, but people often talk about 7 or 8.</p>
+
+          <h4>Personalities</h4>
+          <p><strong>Lion</strong> — Confident team leader, social king.</p>
+          <p><strong>Tiger</strong> — Strong, independent lone warrior.</p>
+          <p><strong>Leopard</strong> — Clever, sneaky ninja.</p>
+          <p><strong>Jaguar</strong> — Bold, powerful powerhouse.</p>
+          <p><strong>Snow Leopard</strong> — Quiet, shy mountain ghost.</p>
+          <p><strong>Cheetah</strong> — Speedy, nervous sprinter.</p>
+          <p><strong>Cougar</strong> — Stealthy, quiet explorer.</p>
+          ">
+          <img src="https://i.pinimg.com/1200x/11/0c/2f/110c2f9786ede37dc2e3241f49c88909.jpg" alt="">
+          <div class="slide-title">Big Cats</div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="slide"
+          data-title="The GOAT"
+          data-image="https://i.pinimg.com/1200x/73/ae/10/73ae1099c4f09c96269c8cc70d2b8589.jpg"
+          data-content="
+          <h3>The GOAT</h3>
+          <p>Goats are curious, smart animals found in domestic and wild forms.</p>
+
+          <h4>Domestic Goats</h4>
+          <p>One of the first domesticated animals — 10,000 years ago.</p>
+          <ul>
+            <li>200–300+ breeds</li>
+            <li>Used for milk, meat, fiber, companionship</li>
+            <li>Very social, playful, and clean eaters</li>
+          </ul>
+
+          <h4>Wild Goats</h4>
+          <ul>
+            <li>Ibex</li>
+            <li>Markhor (national animal of Pakistan)</li>
+            <li>Tur</li>
+            <li>Walia ibex</li>
+          </ul>
+
+          <p>Markhor have huge spiral horns up to 5 feet long.</p>
+          ">
+          <img src="https://i.pinimg.com/1200x/73/ae/10/73ae1099c4f09c96269c8cc70d2b8589.jpg" alt="">
+          <div class="slide-title">The GOAT</div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="slide"
+          data-title="Sharks"
+          data-image="https://i.pinimg.com/736x/dd/e5/7d/dde57d61378e6688bd1f2445ea6fceae.jpg"
+          data-content="
+          <h3>Sharks</h3>
+          <p>Sharks are ancient ocean predators — over 450 million years old.</p>
+
+          <h4>Species Count</h4>
+          <p>500+ species, with new ones still being discovered.</p>
+
+          <h4>Habitats</h4>
+          <ul>
+            <li>Coral reefs</li>
+            <li>Open ocean</li>
+            <li>Deep sea</li>
+            <li>Polar waters</li>
+            <li>Tropical seas</li>
+          </ul>
+
+          <h4>Fun Facts</h4>
+          <ul>
+            <li>No bones — made of cartilage</li>
+            <li>Super senses</li>
+            <li>Thousands of teeth in a lifetime</li>
+            <li>Some must swim to breathe</li>
+            <li>Baby sharks = pups</li>
+          </ul>
+
+          <h4>Famous Sharks</h4>
+          <ul>
+            <li>Whale Shark — largest fish</li>
+            <li>Great White — powerful hunter</li>
+            <li>Mako — fastest shark</li>
+            <li>Hammerhead — wide vision</li>
+            <li>Tiger Shark — eats almost anything</li>
+            <li>Dwarf Lanternshark — smallest</li>
+            <li>Greenland Shark — lives hundreds of years</li>
+          </ul>
+          ">
+          <img src="https://i.pinimg.com/736x/dd/e5/7d/dde57d61378e6688bd1f2445ea6fceae.jpg" alt="">
+          <div class="slide-title">Sharks</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <img id="modal-image" src="" alt="">
+        <div class="modal-text">
+          <h2 id="modal-title"></h2>
+          <div id="modal-body"></div>
+        </div>
+      </div>
     </div>
+
+    <!-- ABOUT PREVIEW -->
+    <section class="about-preview section slide-right scroll-animate">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-image">
+            <img src="images/hero1.jpg" alt="About preview">
+          </div>
+          <div class="about-text">
+            <h2>About Me</h2>
+            <p>Short introduction text goes here.</p>
+            <a href="about.html" class="button">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services section slide-up scroll-animate">
+  <div class="container">
+    <h2>Services</h2>
+    <div class="service-card fade-in">
+
+
+      <!-- SERVICE 1: HELP WILD CATS -->
+      <div class="service-card">
+        <img src="https://i.pinimg.com/1200x/45/7c/5c/457c5c177303321015cfad85569a8ccd.jpg" alt="Help Wild Cats" class="service-image">
+        <h3>Help Wild Cats</h3>
+        <p>
+          Many wild cat species are endangered due to habitat loss, poaching, and illegal wildlife trade.
+          Endangered species include the Asiatic lion, tigers, leopards, and several small wild cats.
+          Help these cats with the links below:
+        </p>
+        <h4>Help Wild Cats:</h4>
+        <ul>
+          <li><a href="https://felidaefund.org/" target="_blank">Felidae Fund</a></li>
+          <li><a href="https://www.wildcatsanctuary.org/support-tws/volunteer/" target="_blank">Wildcat Sanctuary Volunteer</a></li>
+          <li><a href="https://bigcatrescue.org/" target="_blank">Big Cat Rescue</a></li>
+          <li><a href="https://bigcatswildcats.com/organizations/wild-cat-rescue-and-sanctuaries/" target="_blank">Wild Cat Sanctuaries</a></li>
+          <li><a href="https://www.humaneworld.org/en/resources/find-wildlife-rescue-and" target="_blank">Find Wildlife Rescue</a></li>
+          <li><a href="https://impactful.ninja/best-charities-for-big-cats/" target="_blank">Best Big Cat Charities</a></li>
+        </ul>
+      </div>
+
+      <!-- SERVICE 2: HELP SHARKS -->
+      <div class="service-card fade-in">
+
+        <img src="https://i.pinimg.com/1200x/77/8e/a7/778ea7cfc5314e07f7d345da2c57a547.jpg" alt="Help Sharks" class="service-image">
+        <h3>Help Sharks</h3>
+        <p>
+          Sharks are among the most threatened marine species due to overfishing, habitat loss, and finning.
+          Their populations have declined by over 70% in the last 50 years. Many species, such as the Great Hammerhead,
+          Angelshark, and Oceanic Whitetip, are critically endangered. Protecting sharks is essential for healthy oceans.
+        </p>
+        <h4>Help Sharks:</h4>
+        <ul>
+          <li><a href="https://sharkallies.org/" target="_blank">Shark Allies</a></li>
+          <li><a href="https://impactful.ninja/best-charities-for-sharks/" target="_blank">Best Shark Charities</a></li>
+          <li><a href="https://nonprofitpoint.com/best-shark-charities/" target="_blank">Nonprofit Shark Charities</a></li>
+          <li><a href="https://sharkangels.org/" target="_blank">Shark Angels</a></li>
+        </ul>
+      </div>
+
+      <!-- SERVICE 3: HELP GOATS -->
+      <div class="service-card fade-in">
+
+        <img src="https://i.pinimg.com/736x/31/9b/c3/319bc3c075a4ae2e07053cdfbc24e46f.jpg" alt="Help Goats" class="service-image">
+        <h3>Help Goats</h3>
+        <p>
+        Uncontrolled goat populations can lead to a range of environmental challenges, impacting vegetation, soil, biodiversity, and water quality. 
+        Understanding these effects is important for maintaining ecological balance in areas where goats are present.
+            
+          Uncontrolled goat populations can harm vegetation, soil, biodiversity, and water quality.
+          Out of 576 goat breeds, 19 are extinct, 90 are at risk, and 310 have no conservation data.
+          Conservation efforts are essential to protect rare and endangered goat breeds.
+
+            Key Facts:
+    Goats can adapt to a wide range of environments, from mountains to deserts.
+    Mountain goats can climb extremely steep cliffs thanks to their split hooves and rough pads.
+    Some goat breeds are critically endangered due to habitat loss and lack of conservation programs.
+    Goats have been domesticated for over 10,000 years, making them one of the oldest livestock species.
+    They play an important role in controlling vegetation when properly managed.
+    Uncontrolled goat populations can damage soil, plants, and biodiversity.
+    There are 576 recognized goat breeds worldwide, with many lacking conservation data.
+    Goats are highly intelligent and social animals capable of forming strong bonds.
+    They can survive in harsh climates due to their efficient digestive systems.
+    Conservation efforts help protect rare goat breeds and maintain ecological balance.
+        </p>
+        <h4>Help Goats:</h4>
+        <ul>
+          <li><a href="https://www.theoldgoatshome.org/#/" target="_blank">The Old Goats Home</a></li>
+          <li><a href="https://www.frederickfarmgoats.com/help" target="_blank">Frederick Farm Goats</a></li>
+          <li><a href="https://www.goatsforgood.charity/how-we-help" target="_blank">Goats for Good</a></li>
+          <li><a href="https://www.petgoats.org/" target="_blank">Pet Goats Organization</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<!-- SLIDE 1: BIG CATS -->
-<section id="bigcats" class="slide-section">
-    <h2>Big Cats</h2>
-    <p>
-        Big cats are powerful predators known for their strength, speed, and beauty. 
-        They include lions, tigers, leopards, and jaguars. These animals are apex predators 
-        and play an important role in keeping ecosystems balanced.
-    </p>
-</section>
 
-<!-- SLIDE 2: THE GOAT -->
-<section id="goat" class="slide-section">
-    <h2>The Goat</h2>
-    <p>
-        Goats are intelligent, curious, and playful animals. They are known for their climbing 
-        abilities and their unique rectangular pupils. Goats have been domesticated for thousands 
-        of years and provide milk, meat, and companionship.
-    </p>
-</section>
+    <!-- GALLERY PREVIEW -->
+    <section class="gallery-preview section fade-in scroll-animate">
+      <div class="container">
+        <h2>Gallery Preview</h2>
+        <div class="gallery-grid">
+          <img src="images/gallery01.jpg" alt="">
+          <img src="images/gallery02.jpg" alt="">
+          <img src="images/gallery03.jpg" alt="">
+          <img src="images/gallery04.jpg" alt="">
+          <img src="images/gallery05.jpg" alt="">
+          <img src="images/gallery06.jpg" alt="">
+        </div>
+        <a href="gallery.html" class="button">View Full Gallery</a>
+      </div>
+    </section>
 
-<!-- SLIDE 3: SHARKS -->
-<section id="sharks" class="slide-section">
-    <h2>Sharks</h2>
-    <p>
-        Sharks are ancient ocean predators that have existed for over 400 million years. 
-        They come in many sizes, from tiny dwarf sharks to massive whale sharks. Despite 
-        their scary reputation, most sharks are harmless to humans and are essential for 
-        healthy marine ecosystems.
-    </p>
-</section>
+    <!-- CTA -->
+    <section class="cta section slide-right scroll-animate">
+      <div class="container">
+        <h2>Ready to Work Together?</h2>
+        <p>Contact me for projects or collaborations.</p>
+        <a href="contact.html" class="button">Get in Touch</a>
+      </div>
+    </section>
 
-<!-- DARK/LIGHT MODE SCRIPT -->
-<script>
-const toggleBtn = document.getElementById("modeToggle");
-toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("light-mode");
-});
-</script>
+    <!-- CONTACT PREVIEW -->
+    <section class="contact-preview section slide-up scroll-animate">
+      <div class="container">
+        <h2>Quick Contact</h2>
+        <form>
+          <input type="text" placeholder="Your Name">
+          <input type="email" placeholder="Your Email">
+          <textarea placeholder="Your Message"></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Animals from Land, Mountains and the Sea. by Mahnoor Fatima All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL SCRIPT -->
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-image');
+    const modalTitle = document.getElementById('modal-title');
+    const modalBody = document.getElementById('modal-body');
+    const closeBtn = document.querySelector('.close-btn');
+
+    slides.forEach(slide => {
+      slide.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        modalImg.src = slide.dataset.image;
+        modalTitle.textContent = slide.dataset.title;
+        modalBody.innerHTML = slide.dataset.content;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+  </script>
+
+  <!-- THEME TOGGLE + SCROLL ANIMATIONS -->
+  <script>
+    /* THEME TOGGLE */
+    const themeToggle = document.querySelector('.theme-toggle');
+
+    function updateThemeIcon() {
+      if (document.body.classList.contains('purple-theme')) {
+        themeToggle.textContent = '🌕';
+      } else {
+        themeToggle.textContent = '🌑';
+      }
+    }
+
+    updateThemeIcon();
+
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('purple-theme');
+      updateThemeIcon();
+    });
+
+    /* PAGE LOAD ANIMATION */
+    document.body.classList.add('page-load');
+
+    /* SCROLL ANIMATIONS */
+    const animatedElements = document.querySelectorAll('.scroll-animate');
+
+
+      function checkVisibility() {
+      animatedElements.forEach(el => 
+      const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add('visible');
+        } else {
+          el.classList.remove('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    window.addEventListener('load', checkVisibility);
+  </script>
 
 </body>
 </html>
